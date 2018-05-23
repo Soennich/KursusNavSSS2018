@@ -1,0 +1,60 @@
+page 123456700 "Seminar Setup"
+// CSD1.00 - 2018-05-23 Axal
+// Chapter 5 - lab 2-3
+
+{
+    PageType = Card;
+    SourceTable = "Seminar Setup";
+    Caption = 'Seminar Setup';
+    InsertAllowed=false;
+    DeleteAllowed=false;
+    UsageCategory=Administration;
+
+    layout
+    {
+        area(content)
+        {
+            group(Numbering)
+            {
+                field("Seminar Nos.";"Seminar Nos.")
+                {
+                    
+                }
+
+                field("Seminar Registration Nos.";"Seminar Registration Nos.")
+                {
+                    
+                }
+
+                field("Posted Seminar Reg. Nos.";"Posted Seminar Reg. Nos.")
+                {
+                    
+                }
+
+            }
+        }
+    }
+
+    actions
+    {
+        area(processing)
+        {
+            action(ActionName)
+            {
+                trigger OnAction();
+                begin
+                end;
+            }
+        }
+    }
+    
+    
+    trigger OnOpenPage();
+    
+    begin
+        if not Get then begin
+            init;
+            insert;
+        end;
+    end;
+}

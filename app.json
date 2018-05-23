@@ -1,0 +1,22 @@
+{
+  "id": "40442993-0413-405d-ae0b-3727b2948990",
+  "name": "Kursus Nav extensions 2018",
+  "publisher": "Axal",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "11.0.0.0",
+  "application": "11.0.0.0",
+  "idRange": {
+    "from": 123456700,
+    "to": 123456799
+  }
+}

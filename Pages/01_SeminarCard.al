@@ -13,6 +13,12 @@ page 123456701 "Seminar Card"
                 field("No.";"No.")
                 {
                     Caption='Number';
+                    trigger OnAssistEdit();
+                                           
+                    begin
+                        if AssistEdit then
+                            CurrPage.Update;    
+                    end;
                 }
 
                 field(Name;Name)
@@ -80,26 +86,33 @@ page 123456701 "Seminar Card"
             {
 
             }
-            systempart("Notes",Notes)
+            systempart("Notes";Notes)
             {
-                
+
             }
         }
     }
 
     actions
     {
-        area(processing)
+        area(Navigation)
         {
-            action(ActionName)
+            group("&Seminar")
             {
-                trigger OnAction();
-                begin
-                end;
+                action("Co&mments")
+                {
+//                    RunObject=page "Seminar comment Sheet";
+//                    RunPageLink = "Table Name" = const(Seminar),"No."=field("No.");
+
+                    Image = Comment;
+                    Promoted = true;
+                    PromotedIsBig = true;
+                    PromotedOnly = true;
+
+                }
             }
         }
     }
     
-    var
-        myInt : Integer;
+ 
 }

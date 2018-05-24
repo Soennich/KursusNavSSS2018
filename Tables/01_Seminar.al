@@ -124,7 +124,7 @@ table 123456701 Seminar
     
     var
         SeminarSetup : Record "Seminar Setup";
-        //CommentLine : record "Seminar Comment Line";
+        CommentLine : record "Seminar Comment Line";
         Seminar : Record Seminar;
         GenProdPostingGroup: Record "Gen. Product Posting Group";
         NoSeriesMgt : Codeunit NoSeriesManagement;
@@ -146,11 +146,11 @@ table 123456701 Seminar
     trigger OnDelete();
     begin
         // don't exist yet!!!!
-        //CommentLine.Reset;
-        //CommentLine.SetRange("Table Name",
-        //CommentLine."Table Name"::Seminar);
-        //CommentLine.SetRange("No.","No.");
-        //CommentLine.DeleteAll
+        CommentLine.Reset;
+        CommentLine.SetRange("Table Name",
+        CommentLine."Table Name"::Seminar);
+        CommentLine.SetRange("No.","No.");
+        CommentLine.DeleteAll
     end;
 
     trigger OnRename();

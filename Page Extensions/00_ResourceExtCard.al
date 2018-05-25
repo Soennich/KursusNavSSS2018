@@ -7,11 +7,11 @@ pageextension 123456700 CSD_ResourceCardExt extends "Resource Card"
         {
             field("Resource Type"; "CSD_Resource Type")
             {
-
+                Caption = 'Resource type';
             }
             field("Quantity per Day"; "CSD_Quantity Per Day")
             {
-
+                Caption = 'Quantity per day';
             }
         }
         addafter("Personal Data")
@@ -20,6 +20,7 @@ pageextension 123456700 CSD_ResourceCardExt extends "Resource Card"
             {
                 field("Maximum Participants"; "CSD_Maximum Participants")
                 {
+                    Caption = 'Maximum participants';
                     Visible = ShowMaxField;
                 }
             }

@@ -2,7 +2,7 @@ page 123456701 "Seminar Card"
 {
     PageType = Card;
     SourceTable = Seminar;
-    Caption='Seminar';
+    Caption = 'Seminar';
 
     layout
     {
@@ -10,50 +10,50 @@ page 123456701 "Seminar Card"
         {
             group(General)
             {
-                field("No.";"No.")
+                field("No."; "No.")
                 {
-                    Caption='Number';
+                    Caption = 'Number';
                     trigger OnAssistEdit();
-                                           
+
                     begin
                         if AssistEdit then
-                            CurrPage.Update;    
+                            CurrPage.Update;
                     end;
                 }
 
-                field(Name;Name)
+                field(Name; Name)
                 {
-                    Caption='Name';
+                    Caption = 'Name';
                 }
 
-                field("Search Name";"Search Name")
+                field("Search Name"; "Search Name")
                 {
-                    Caption='Search name';
+                    Caption = 'Search name';
                 }
 
-                field("Seminar Duration";"Seminar Duration")
+                field("Seminar Duration"; "Seminar Duration")
                 {
-                    Caption='Seminar duration';
+                    Caption = 'Seminar duration';
                 }
 
-                field("Minimum Participants";"Minimum Participants")
+                field("Minimum Participants"; "Minimum Participants")
                 {
-                    Caption='Minimum participants';
+                    Caption = 'Minimum participants';
                 }
 
-                field("Maximum Participants";"Maximum Participants")
+                field("Maximum Participants"; "Maximum Participants")
                 {
-                    Caption='Maximum partipants';
+                    Caption = 'Maximum partipants';
                 }
 
-                field(Blocked;Blocked)
+                field(Blocked; Blocked)
                 {
-                    Caption='Blocked';
+                    Caption = 'Blocked';
                 }
 
-                field("Last Date Modified";"Last Date Modified")
+                field("Last Date Modified"; "Last Date Modified")
                 {
-                    Caption='Last date modified';
+                    Caption = 'Last date modified';
                 }
 
 
@@ -62,19 +62,19 @@ page 123456701 "Seminar Card"
             group(Invoicing)
             {
 
-                field("Gen. Prod. Posting Group";"Gen. Prod. Posting Group")
+                field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
                 {
-                    Caption='Gen. prod. posting group';
+                    Caption = 'Gen. prod. posting group';
                 }
 
-                field("VAT Prod. Posting Group";"VAT Prod. Posting Group")
+                field("VAT Prod. Posting Group"; "VAT Prod. Posting Group")
                 {
-                    Caption='VAT prod. posting group';
+                    Caption = 'VAT prod. posting group';
                 }
 
-                field("Seminar Price";"Seminar Price")
+                field("Seminar Price"; "Seminar Price")
                 {
-                    Caption='Seminar';
+                    Caption = 'Seminar';
                 }
 
             }
@@ -82,11 +82,11 @@ page 123456701 "Seminar Card"
 
         area(FactBoxes)
         {
-            systempart("Links";Links)
+            systempart("Links"; Links)
             {
 
             }
-            systempart("Notes";Notes)
+            systempart("Notes"; Notes)
             {
 
             }
@@ -101,8 +101,8 @@ page 123456701 "Seminar Card"
             {
                 action("Co&mments")
                 {
-//                    RunObject=page "Seminar comment Sheet";
-//                    RunPageLink = "Table Name" = const(Seminar),"No."=field("No.");
+                    //                    RunObject=page "Seminar comment Sheet";
+                    //                    RunPageLink = "Table Name" = const(Seminar),"No."=field("No.");
 
                     Image = Comment;
                     Promoted = true;
@@ -110,9 +110,45 @@ page 123456701 "Seminar Card"
                     PromotedOnly = true;
 
                 }
+
+                // >> Lab 8 1-2
+                action("Ledger Entries")
+                {
+                    RunObject = page "Seminar Ledger Entries";
+                    RunPageLink = "Seminar No." = field ("No.");
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    ShortcutKey = "Ctrl+F7";
+                    Image = WarrantyLedger;
+                }
+                // << Lab 8 1-2
+
+                // >> Lab 8 1-2
+                action("&Registrations")
+                {
+                    RunObject = page "Seminar Registration List";
+                    RunPageLink = "Seminar No." = field ("No.");
+                    Image = Timesheet;
+                    Promoted = true;
+                    PromotedCategory = Process;
+                }
+                // << Lab 8 1-2
+
             }
         }
-    }
-    
- 
-}
+
+
+        // >> Lab 8 1-2
+        area(Processing)
+        {
+            action("Seminar Registration")
+            {
+                RunObject = page "Seminar Registration";
+                RunPageLink = "Seminar No." = field ("No.");
+                RunPageMode = Create;
+                Image = NewTimesheet;
+
+            }
+
+
+        }

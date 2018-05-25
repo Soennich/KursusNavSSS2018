@@ -9,6 +9,7 @@ page 123456710 "Seminar Registration"
     Caption = 'Seminar Registration';
     PageType = Document;
     SourceTable = "Seminar Registration Header";
+    UsageCategory=Lists;
 
     layout
     {

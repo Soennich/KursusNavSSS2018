@@ -1,6 +1,6 @@
 report 123456700 "Create Seminar Invoices"
 {
-    // CSD1.00 - 2018-05-25 - Axal
+    // CSD1.00 - 2018-01-01 - D. E. Veloper
     //   Chapter 9 - Lab 2
     //     - Created new report
 
